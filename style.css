@@ -1,0 +1,20 @@
+/*
+Theme Name: LmdghTheme
+Theme URI: 
+Author: Luis Miguel Del Gallego H.
+Author URI: http://www.4654654654.com/
+Description: Tema minimalista diseñado Francisco Aguilera G. y desarrollado por Luis Miguel Del Gallego para presentar portafolios creativos.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lmdgh
+*/
+
+/************
+//---------------------------------------------------------------------
+// 01 - IMPORTAR LESS COMPILADO
+//      para estilos específicos del tema
+//---------------------------------------------------------------------
+************/
+ 
+@import url('less/master.css');

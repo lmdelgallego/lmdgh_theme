@@ -1,0 +1,298 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"th",
+				"the_title"
+			],
+			[
+				"strr",
+				"str_replace"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"decod",
+				"utf8_decode"
+			],
+			[
+				"add",
+				"add_action"
+			],
+			[
+				"fucn",
+				"function"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"BA",
+				"background-color"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"if",
+				"ifelse	if … else …"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 463,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 174.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/~index.php.htm",
+		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/archive-productos.php",
+		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/css/carrito.css",
+		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/single-colores_productos.php",
+		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/index.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/functions.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/single-producto.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/single-colores_productos.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/footer_page.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/galeria_producto.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/single-colores_producto.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/header_page.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/hi-sky/header.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/EMPRENDEDOR/noticia.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/EMPRENDEDOR/index.html",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/EMPRENDEDOR/scripts/cargarNoticiasE.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/EMPRENDEDOR/page_admin/scripts/class/class.Noticia.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/lmdgh_hisky/functions.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/lmdgh_hisky/style.css",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/themes/lmdgh_hisky/header.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/HI-SKY/WP/wp-content/plugins/lmdgh_custom_post/includes/banner_post_type.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/style.css",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/functions.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/footer.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/single.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/header.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/videos.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/css/principal.css",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/sidebar.php",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/css/block.css",
+		"/C/wamp/www/pipe/wp-content/themes/theme_pipe/js/share.js",
+		"/C/wamp/www/citycar/web/contacto.html",
+		"/C/wamp/www/cajita/wadmin/blog.php",
+		"/C/wamp/www/cajita/wadmin/pedidos.php",
+		"/C/wamp/www/wadmin/index.html",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/lacajita/datosPAYU/PAYULATAM_CREDENCIALES.txt",
+		"/C/Users/aluca_000/Downloads/Compressed/jquery-ui-1.10.3.custom/jquery-ui-1.10.3.custom/index.html",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/MEDIOS_V1_2/js/login.js",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/MEDIOS_V1_2/index.php",
+		"/C/wamp/www/mvc/index.php",
+		"/C/wamp/www/mvc/app/views/default/page.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"productos",
+			"4.0",
+			"4.0 - Header"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"colores_productos"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "functions.php",
+					"settings":
+					{
+						"buffer_size": 463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								455,
+								455
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": false
+}

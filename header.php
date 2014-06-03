@@ -17,7 +17,9 @@
         
         if( is_single() && comments_open() ){
             wp_enqueue_script('comment-reply');
-        } ?>
+        } 
+        
+        ?>
         
         <?php wp_head(); ?>
 	

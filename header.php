@@ -8,7 +8,14 @@
         <!-- pingback -->
         <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" >
         
-        <?php if( is_single() && comments_open() ){
+        <?php
+        
+        /*
+
+         * ESTO ABILITA LOS COMENTARIOS
+         *          */
+        
+        if( is_single() && comments_open() ){
             wp_enqueue_script('comment-reply');
         } ?>
         

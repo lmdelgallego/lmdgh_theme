@@ -11,7 +11,7 @@
         <?php
         
         /*
-         * ESTO ABILITA LOS COMENTARIOS
+         * ESTO ABILITA LAS RESPUESTA A COMENTARIOS SI ESTA EN LA PAGINA SINGLE Y ESTAN HABILITADOS
          *          
          */
         

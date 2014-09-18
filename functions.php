@@ -115,5 +115,19 @@
      */
     
     require_once ('functions/menus.php');
+
+        /*
+     * Archivos sidebars 
+     * 
+     */
+    
+    require_once ('functions/sidebars.php');
   
+  /*
+     * Archivos theme-customizer 
+     * 
+     */
+    
+    require_once ('functions/theme-customizer.php');
+
 ?>

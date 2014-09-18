@@ -3,115 +3,122 @@
 			
 			
 			<div id="page-head" class="global-padding small-heading">
-				<h1>Blog</h1>
-				<div class="image-cover" style="background-image: url('img/default-heading-bg.jpg');"></div>
+				<?php if( is_category() ) { ?>
+
+					<h1><?php _e('Categoría','lmdgh') ?>: <?php single_cat_title(); ?></h1>
+				
+				<?php }elseif( is_tag() ){ ?>
+				
+					<h1><?php _e('Etiqueta','lmdgh') ?>: <?php single_tag_title(); ?></h1>
+				
+				<?php }elseif( is_search() ){ ?>
+					
+					<h1><?php _e('Resultados para','lmdgh') ?>: <?php the_search_query(); ?></h1>
+				
+				<?php }elseif( is_day() ){ ?>
+					
+					<h1><?php _e('Archivo','lmdgh') ?>: <?php the_time(get_option('date_format')); ?></h1>
+
+				<?php }elseif( is_month() ){ ?>
+					
+					<h1><?php _e('Archivo','lmdgh') ?>: <?php the_time('F Y'); ?></h1>
+
+				<?php }elseif( is_year() ){ ?>
+					
+					<h1><?php _e('Archivo','lmdgh') ?>: <?php the_time('Y'); ?></h1>		
+
+				<?php }elseif( is_author() ){ ?>
+					
+					<h1><?php _e('Artículos por','lmdgh') ?>: <?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); echo $curauth->display_name; ?></h1>	
+
+				<?php }elseif( is_404() ){ ?>
+					
+					<h1><?php _e('Página no encontrada','lmdgh') ?></h1>		
+
+				<?php }elseif( is_home() ){ ?>
+					
+					<h1><?php _e('Blog','lmdgh') ?></h1>	
+						
+				<?php }else{ ?>
+					
+					<h1><?php wp_title(' ',true, 'right'); ?></h1>
+				
+				<?php }?>
+
+				<?php
+					$options = get_theme_mod('lmdg_custom_settings');
+	        		$imagen_cabecera = $options['imagen-cabecera'];
+	        	?>
+
+	        	<?php if (!$imagen_cabecera) {
+	        		$imagen_cabecera = IMAGES.'/default-heading-bg.jpg';
+	        	}
+	        	?>
+				<div class="image-cover" style="background-image: url(<?php echo $imagen_cabecera; ?>);"></div>
+
 			</div><!-- /#page-head -->
 			
 			<div id="main-content">
 
-					<article class="article resume">
+				<?php if( have_posts() ): while(have_posts()) : the_post(); ?>
+
+					<article <?php post_class("article resume"); ?> id="post-<?php the_ID(); ?>">
 						
 						<div class="blog-entry-header">
-							<small class="entry-date">Enero 7, 2014</small>
-							<h2><a href="">Un post con una imagen destacada</a></h2>
+							<small class="entry-date"><?php the_time( get_option('date_format')); ?></small>
+							<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 						</div><!-- /.blog-entry-header -->
 						
+						<?php
 
-						<img width="640" height="480" src="http://placekitten.com/640/350" alt="saul-bass">
-						
-						<div class="article-intro">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum.</p>
-						</div><!-- /.article-intro -->
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum, placerat rutrum nunc. Donec ut molestie purus. Quisque aliquam velit metus. Nullam tristique pulvinar diam a malesuada. Donec volutpat blandit libero, ac posuere augue scelerisque vel. Nam eros nunc, tempor id velit eu, ultricies mattis lorem.</p>
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum, placerat rutrum nunc. Donec ut molestie purus. Quisque aliquam velit metus. Nullam tristique pulvinar diam a malesuada. Donec volutpat blandit libero, ac posuere augue scelerisque vel. Nam eros nunc, tempor id velit eu, ultricies mattis lorem.</p>
-						
-						<p> <a href="" class="more-link">Ver más</a></p>
-											
-					</article>	<!-- /.resume -->
-					
-					
-					<article class="article resume">
-						
-						<div class="blog-entry-header">
-							<small class="entry-date">Enero 7, 2014</small>
-							<h2><a href="">Las caricaturas de Natalia Benavides</a></h2>
-						</div><!-- /.blog-entry-header -->
-						
+							if (!has_post_format('video') && !has_post_format('audio')) {
+								# Si la entrada no es de formato video...
+								if( has_post_thumbnail() ){
+									the_post_thumbnail('blog-image');
+								}
+							}
+							
+						?>						
 
-						<iframe width="640" height="360" src="http://www.youtube.com/embed/ELGgRqI2U9M?list=PL55A344CB0F59BB85" frameborder="0" allowfullscreen></iframe>
-						
-						<div class="article-intro">
-							<p><b>Saul Bass</b>&nbsp;(/sɔːl&nbsp;bæs/; May 8, 1920&nbsp;– April 25, 1996) was an American&nbsp;graphic designer&nbsp;and&nbsp;Academy Award&nbsp;winning filmmaker, best known for his design of motion picture&nbsp;title sequences,&nbsp;film posters, andcorporate logos.</p>
-						</div><!-- /.article-intro -->
-						
-						<p>During his 40-year career Bass worked for some of Hollywood’s most prominent filmmakers, including&nbsp;Alfred Hitchcock,&nbsp;Otto Preminger,&nbsp;Billy Wilder,&nbsp;Stanley Kubrick&nbsp;and&nbsp;Martin Scorsese. Among his most famous&nbsp;title sequences&nbsp;are the animated paper cut-out of a heroin addict’s arm for Preminger’s&nbsp;<i>The Man with the Golden Arm</i>, the credits racing up and down what eventually becomes a high-angle shot of a skyscraper in Hitchcock’s&nbsp;<i>North by Northwest</i>, and the disjointed text that races together and apart in&nbsp;<i>Psycho</i>.</p>
-						
-						<p>Bass designed some of the most iconic corporate logos in North America, including the&nbsp;Bell System&nbsp;logo in 1969, as well as&nbsp;AT&amp;T’s globe logo in 1983 after the&nbsp;breakup of the Bell System. He also designedContinental Airlines’ 1968 jet stream logo and&nbsp;United Airlines’ 1974 tulip logo which became some of the most recognized airline industry logos of the era.</p>
-						
-						<p> <a href="" class="more-link">Ver más</a></p>
-											
-					</article>	<!-- /.resume -->
-					
-					<article class="article resume">
-						
-						<div class="blog-entry-header">
-							<small class="entry-date">Enero 7, 2014</small>
-							<h2><a href="">Audio destacado de SoundCloud</a></h2>
-						</div><!-- /.blog-entry-header -->
-						
+						<?php the_content( __('Ver más','lmdgh') ); ?> 
 
-						<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8817320&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
-						
-						<div class="article-intro">
-							<p><b>Saul Bass</b>&nbsp;(/sɔːl&nbsp;bæs/; May 8, 1920&nbsp;– April 25, 1996) was an American&nbsp;graphic designer&nbsp;and&nbsp;Academy Award&nbsp;winning filmmaker, best known for his design of motion picture&nbsp;title sequences,&nbsp;film posters, andcorporate logos.</p>
-						</div><!-- /.article-intro -->
-						
-						<p>During his 40-year career Bass worked for some of Hollywood’s most prominent filmmakers, including&nbsp;Alfred Hitchcock,&nbsp;Otto Preminger,&nbsp;Billy Wilder,&nbsp;Stanley Kubrick&nbsp;and&nbsp;Martin Scorsese. Among his most famous&nbsp;title sequences&nbsp;are the animated paper cut-out of a heroin addict’s arm for Preminger’s&nbsp;<i>The Man with the Golden Arm</i>, the credits racing up and down what eventually becomes a high-angle shot of a skyscraper in Hitchcock’s&nbsp;<i>North by Northwest</i>, and the disjointed text that races together and apart in&nbsp;<i>Psycho</i>.</p>
-						
-						<p>Bass designed some of the most iconic corporate logos in North America, including the&nbsp;Bell System&nbsp;logo in 1969, as well as&nbsp;AT&amp;T’s globe logo in 1983 after the&nbsp;breakup of the Bell System. He also designedContinental Airlines’ 1968 jet stream logo and&nbsp;United Airlines’ 1974 tulip logo which became some of the most recognized airline industry logos of the era.</p>
-						
-						<p> <a href="" class="more-link">Ver más</a></p>
-											
+						<!--
+						<?php the_excerpt(); ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="more-link"><?php _e('Ver más','lmdgh'); ?></a>
+							
+						-->					
 					</article>	<!-- /.resume -->
-					
-					<article class="article resume">
-						
-						<div class="blog-entry-header">
-							<small class="entry-date">Enero 7, 2014</small>
-							<h2><a href="">Otro post con una imagen destacada</a></h2>
-						</div><!-- /.blog-entry-header -->
-						
 
-						<img width="640" height="480" src="http://placekitten.com/g/640/350" alt="saul-bass">
-						
-						<div class="article-intro">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum.</p>
-						</div><!-- /.article-intro -->
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum, placerat rutrum nunc. Donec ut molestie purus. Quisque aliquam velit metus. Nullam tristique pulvinar diam a malesuada. Donec volutpat blandit libero, ac posuere augue scelerisque vel. Nam eros nunc, tempor id velit eu, ultricies mattis lorem.</p>
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae leo laoreet, vulputate augue non, tempor velit. Praesent accumsan tincidunt scelerisque. Donec turpis metus, aliquet eu cursus bibendum, placerat rutrum nunc. Donec ut molestie purus. Quisque aliquam velit metus. Nullam tristique pulvinar diam a malesuada. Donec volutpat blandit libero, ac posuere augue scelerisque vel. Nam eros nunc, tempor id velit eu, ultricies mattis lorem.</p>
-						
-						<p> <a href="" class="more-link">Ver más</a></p>
-											
-					</article>	<!-- /.resume -->
+				<?php endwhile; else: 
+					get_template_part('content','noposts');
+
+				endif; ?>
+
 					
+					
+				<?php
+
+
+					if(get_next_posts_link() || get_previous_posts_link()) {
+				?>	
 					
 					<div class="posts-navigation cf">
 						<nav>
 							
 							<div class="link-container previous fl">	
-								<a href="">&larr; Posts antiguos</a>
+								<?php next_posts_link(__('&larr; Posts antiguos','lmdgh')); ?>
 							</div>
 							<div class="link-container next fr">
-								<a href="">Posts recientes &rarr;</a>
+								<?php previous_posts_link(__('Posts recientes &rarr;','lmdgh')); ?>
 							</div>
 							
 							
 						</nav>
 					</div> <!-- /.posts-navigation -->
+				<?php
+					}
+					
+				?>
 					
 			
 			</div> <!-- /#main-content -->

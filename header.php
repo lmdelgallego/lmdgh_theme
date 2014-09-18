@@ -23,6 +23,11 @@
         ?>
         
         <?php wp_head(); ?>
+
+        <?php 
+        	$options = get_theme_mod('lmdg_custom_settings');
+        	$logo = $options['logo'];
+        ?>
 	
 </head>
 
@@ -32,9 +37,21 @@
 	<header id="main-header">
 			
 		<div id="header-logo">
-				
-			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-			<h2><a href="<?php echo home_url(); ?>"><?php bloginfo('description'); ?></a></h2>
+			
+			<?php
+				if ($logo) {
+			?>
+				<a href="<?php echo home_url(); ?>"><img scr="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>" /></a>	
+			<?php
+				} else {
+			?>
+				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+				<h2><a href="<?php echo home_url(); ?>"><?php bloginfo('description'); ?></a></h2>
+			<?php		
+				}
+			?>
+
+			
 		
 		</div><!-- /#header-logo -->
 	

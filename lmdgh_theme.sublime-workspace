@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"im",
+				"imagen_cabecera"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"lmdgh",
+				"lmdgh_custom_setting"
+			],
+			[
+				"lm",
+				"lmdgh_header"
+			],
+			[
+				"w",
+				"wp_customize"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"ar",
+				"array"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"izqui",
+				"izquierda"
+			],
+			[
 				"th",
 				"the_title"
 			],
@@ -50,31 +86,11 @@
 			[
 				"fo",
 				"form	Tag"
-			],
-			[
-				"if",
-				"ifelse	if … else …"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "style.css",
-			"settings":
-			{
-				"buffer_size": 671,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.php",
-			"settings":
-			{
-				"buffer_size": 463,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -100,6 +116,19 @@
 	},
 	"file_history":
 	[
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/index.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/MERCADEO/wadmin/scripts/objects/class.database.php",
+		"/Y/JUEGO_PRODUCTO_IDEAL/index.html",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/functions.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/functions/theme-customizer.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/functions/menus.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/header.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/footer.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/content-noposts.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/functions/sidebars.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/content-noposts",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/style.css",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/sidebar.php",
 		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/~index.php.htm",
 		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/archive-productos.php",
 		"/C/wamp/www/wphisky/wp-content/themes/hi-sky/css/carrito.css",
@@ -179,61 +208,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 671,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								215,
-								215
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "functions.php",
-					"settings":
-					{
-						"buffer_size": 463,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								455,
-								455
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

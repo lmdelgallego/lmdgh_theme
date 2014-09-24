@@ -55,7 +55,7 @@
 	
 	.article {
 
-		p:fist-child{
+		> p:fist-child{
 			margin-top: 0;
 		}
 		
@@ -115,42 +115,43 @@
 			}
 		}
 		
-		.share-post {
-			margin-top: 40px;
-			.font-size(1.2);
 			
-			span {
-				font-size: 1.5em;
-				padding-right: 3px;
-				
-				&.facebook-logo {
-					color: #3b5998;
-				}
-				
-				&.twitter-logo {
-					color: #00acee;
-				}
-				
-				&.googleplus-logo {
-					color: #db4a39;
-				}
-			} 
+	}
+
+	.share-post {
+		margin-top: 40px;
+		.font-size(1.2);
+		
+		span {
+			font-size: 1.5em;
+			padding-right: 3px;
 			
-			a {
-				padding: 0 0 0 10px;
-				color: @color-text;
+			&.facebook-logo {
+				color: #3b5998;
+			}
+			
+			&.twitter-logo {
+				color: #00acee;
+			}
+			
+			&.googleplus-logo {
+				color: #db4a39;
+			}
+		} 
+		
+		a {
+			padding: 0 0 0 10px;
+			color: @color-text;
+			
+			&:hover {
+				text-decoration: none;
+				color: @color-primary;
 				
-				&:hover {
+				span {
 					text-decoration: none;
-					color: @color-primary;
-					
-					span {
-						text-decoration: none;
-					}
 				}
 			}
 		}
-		
 	}
 	
 	.posts-navigation {

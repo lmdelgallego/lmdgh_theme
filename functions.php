@@ -123,11 +123,20 @@
     
     require_once ('functions/sidebars.php');
   
-  /*
+    /*
      * Archivos theme-customizer 
      * 
      */
     
     require_once ('functions/theme-customizer.php');
 
+    /*
+     * Editor elements
+     * 
+     */
+    
+    require_once ('functions/editor-elements.php');
+
+
 ?>
+

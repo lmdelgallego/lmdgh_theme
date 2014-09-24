@@ -1,11 +1,12 @@
 <?php
 /**
+ * Template name: Archivos
+ *
+ * Plantilla de arvhicvos
  * 
- * Detalle de articulo
+ * Esta plantilla se utilizará para mostrar un archivo
+ * de los post mas recientes y archivos por fecha
  * 
- * Esta plantilla se utilizará para mostrar el detalle
- * de los articulos, así como también el detalle de cualquier
- * custom post type que no posea su propia plantilla.
  *  
  * @author Luis Miguel Del Gallego H.
  * @package LmdghTheme
@@ -18,45 +19,9 @@
 		<section id="main-content-area" class="global-padding cols">
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-
-			<div id="page-head" class="global-padding post-head cf">
 			
-				<div class="post-head-content">
-					
-					<h1><?php the_title(); ?></h1>
-					
-					<div id="blog-post-meta">
-						
-						<div class="author">
-							<i class="icon-user"></i><?php _e( 'Por', 'lmdgh' ); ?> <a href=""><?php the_author_posts_link(); ?></a>
-						</div>
-						
-						<div class="date">
-							<i class="icon-calendar"></i> <?php the_time(get_option('date_format' )); ?>
-						</div>
-						
-						<div class="categories">
-							<i class="icon-list"></i> <a href=""><?php the_category(', '); ?></a>
-						</div>
-						
-						<?php if (comments_open() || have_comments() ) { ?>
-						<div class="comments-counter">
-							<i class="icon-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number(__('Se el primero en comentar.','lmgh'), __('1 comentario disponible','lmgh'),__('% comentarios','lmdgh')); ?></a>
-						</div>
-
-						<?php } ?>
-						
-						<?php if (has_tag()) { ?>
-						<div class="tags">
-							<i class="icon-tag"></i> <?php the_tags( '', ', ', '' ); ?>
-						</div>
-						<?php } ?>
-
-					</div><!-- /.blog-post-meta -->
-					
-				</div><!-- /.post-head-content -->
-
+			<div id="page-head" class="global-padding">
+				<h1><?php the_title(); ?></h1>
 				<?php 
 
 					if (has_post_thumbnail()) {
@@ -77,15 +42,11 @@
 					}
 
 				 ?>
-				
-				
+			</div><!-- /#page-head -->	
 			
-			</div><!-- /#page-head -->			
+			<div id="main-content" class="full-width">
 			
-			
-			<div id="main-content" class="">
-			
-				<article id="post-<?php the_id(); ?>" <?php post_class('article'); ?>>
+				<article id="post-<?php the_id(); ?>" <?php post_class('page'); ?>>
 					
 					<?php the_content(); ?>
 						<?php wp_link_pages(
@@ -103,6 +64,60 @@
 							)
 
 						); ?>		
+
+					<div class="cols">
+						<div class="col3">
+							<div class="archive-block">
+								<h3><?php _e( 'Archivo por año', 'lmdgh' ); ?></h3>
+								<ul><?php wp_get_archives(array('type' => 'yearly' ) ); ?></ul>
+							</div>
+							
+							<div class="archive-block">
+								<h3><?php _e( 'Archivo por mes', 'lmdgh' ); ?></h3>
+								<ul><?php wp_get_archives(array('type' => 'monthly' ) ); ?></ul>
+							</div>
+							
+						</div>
+						<div class="col3">
+							<div class="archive-block">
+								<h3><?php _e( 'Los últimos 10 posts', 'lmdgh' ); ?></h3>
+								<ul>
+									<?php 
+										$recent_posts = wp_get_recent_posts( array('numberposts' => 10) ); 
+
+										foreach ($recent_posts as $recent) {
+									?>
+										<li><a href="<?php echo get_permalink( $recent['ID'] ); ?>" title="<?php echo esc_attr($recent['post_title'] ); ?>" ><?php echo $recent['post_title'] ?></a></li>
+									<?php		
+										}
+									?>
+								</ul>
+
+							</div>
+							
+							<div class="archive-block">
+								<h3><?php _e( 'Archivo por autor', 'lmdgh' ); ?></h3>
+								<ul>
+									<?php wp_list_authors( ); ?>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col3">
+							<div class="archive-block">
+								<h3><?php _e( 'Archivo por día', 'lmdgh' ); ?></h3>
+								<ul><?php wp_get_archives(array('type' => 'daily' ) ); ?></ul>
+							</div>
+							
+							<div class="archive-block">
+								<h3><?php _e( 'Archivo por categorías', 'lmdgh' ); ?></h3>
+								<ul><?php wp_list_categories('title_li='); ?></ul>
+
+							</div>
+						</div>
+					</div>
+
+
 				
 					<div class="share-post">
 						
@@ -121,21 +136,12 @@
 				
 				</article>	<!-- /.page -->
 
-
-
 			<?php endwhile; endif; ?>
 				
-				<?php if(get_next_post() || get_previous_post()) { ?>	
-				<div class="posts-navigation">
-						<?php next_post_link('<strong class="prev">' . __('Posts anterior:','lmdgh') . '</strong> %link <br />', '%title'); ?>
-						<?php previous_post_link('<strong class="next">' . __('Posts siguiente:','lmdgh') . '</strong> %link <br />', '%title'); ?>
-				</div>
-				<?php } ?>
-
 			<?php comments_template('',true); ?>		
 			
 			</div> <!-- end #main-content -->
-			<?php get_sidebar(); ?>
+			
 		</section>
 
 

@@ -1,11 +1,10 @@
 <?php
 /**
  * 
- * Detalle de articulo
+ * Plantilla de paginas estándar
  * 
  * Esta plantilla se utilizará para mostrar el detalle
- * de los articulos, así como también el detalle de cualquier
- * custom post type que no posea su propia plantilla.
+ * de las paginas
  *  
  * @author Luis Miguel Del Gallego H.
  * @package LmdghTheme
@@ -18,45 +17,9 @@
 		<section id="main-content-area" class="global-padding cols">
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-
-			<div id="page-head" class="global-padding post-head cf">
 			
-				<div class="post-head-content">
-					
-					<h1><?php the_title(); ?></h1>
-					
-					<div id="blog-post-meta">
-						
-						<div class="author">
-							<i class="icon-user"></i><?php _e( 'Por', 'lmdgh' ); ?> <a href=""><?php the_author_posts_link(); ?></a>
-						</div>
-						
-						<div class="date">
-							<i class="icon-calendar"></i> <?php the_time(get_option('date_format' )); ?>
-						</div>
-						
-						<div class="categories">
-							<i class="icon-list"></i> <a href=""><?php the_category(', '); ?></a>
-						</div>
-						
-						<?php if (comments_open() || have_comments() ) { ?>
-						<div class="comments-counter">
-							<i class="icon-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number(__('Se el primero en comentar.','lmgh'), __('1 comentario disponible','lmgh'),__('% comentarios','lmdgh')); ?></a>
-						</div>
-
-						<?php } ?>
-						
-						<?php if (has_tag()) { ?>
-						<div class="tags">
-							<i class="icon-tag"></i> <?php the_tags( '', ', ', '' ); ?>
-						</div>
-						<?php } ?>
-
-					</div><!-- /.blog-post-meta -->
-					
-				</div><!-- /.post-head-content -->
-
+			<div id="page-head" class="global-padding">
+				<h1><?php the_title(); ?></h1>
 				<?php 
 
 					if (has_post_thumbnail()) {
@@ -77,15 +40,11 @@
 					}
 
 				 ?>
-				
-				
-			
-			</div><!-- /#page-head -->			
-			
+			</div><!-- /#page-head -->	
 			
 			<div id="main-content" class="">
 			
-				<article id="post-<?php the_id(); ?>" <?php post_class('article'); ?>>
+				<article id="post-<?php the_id(); ?>" <?php post_class('page'); ?>>
 					
 					<?php the_content(); ?>
 						<?php wp_link_pages(
@@ -121,17 +80,8 @@
 				
 				</article>	<!-- /.page -->
 
-
-
 			<?php endwhile; endif; ?>
 				
-				<?php if(get_next_post() || get_previous_post()) { ?>	
-				<div class="posts-navigation">
-						<?php next_post_link('<strong class="prev">' . __('Posts anterior:','lmdgh') . '</strong> %link <br />', '%title'); ?>
-						<?php previous_post_link('<strong class="next">' . __('Posts siguiente:','lmdgh') . '</strong> %link <br />', '%title'); ?>
-				</div>
-				<?php } ?>
-
 			<?php comments_template('',true); ?>		
 			
 			</div> <!-- end #main-content -->

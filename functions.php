@@ -137,6 +137,13 @@
     
     require_once ('functions/editor-elements.php');
 
+    /*
+     * Home Metaboxes
+     * 
+     */
+    
+    require_once ('functions/home-metaboxes.php');
+
 
 ?>
 

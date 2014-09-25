@@ -23,11 +23,11 @@
             <!-- post -->
             
             <?php 
-                $slogan = get_field('slogan');
-                $btn_text = get_field('btn_text');
-                $btn_link = get_field('btn_link');
-                $proyectos_title = get_field('proyectos_title');
-                $proyectos_count = get_field('proyectos_count');
+                $slogan = get_post_meta( $post->ID, 'slogan', true );
+                $btn_text = get_post_meta( $post->ID,'btn_text', true);
+                $btn_link = get_post_meta( $post->ID,'btn_link', true);
+                $proyectos_title = get_post_meta( $post->ID,'proyectos_title', true);
+                $proyectos_count = get_post_meta( $post->ID,'proyectos_count', true);
 
                 if (!$slogan) {
                    $slogan = get_bloginfo('name' );
@@ -44,10 +44,10 @@
 
             <div id="home-page-head" class="global-padding">
                 
-                <h2><?php echo $slogan; ?></h2>
+                <h2><?php echo nl2br($slogan); ?></h2>
                 
                 <?php if ($btn_link) { ?>
-                    <a href="<?php echo $btn_link; ?>" class="btn btn-big"><?php echo $btn_text; ?></a>
+                    <a href="<?php echo esc_url( $btn_link ); ?>" class="btn btn-big"><?php echo $btn_text; ?></a>
                 <?php } ?>
                 <?php 
 

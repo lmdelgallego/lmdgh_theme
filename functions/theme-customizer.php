@@ -15,6 +15,23 @@
 function lmdgh_customizer_register($wp_customize){
 
 	/**
+	* CREAMOS EL CONTROLADOR DE TEXT AREA
+	*/
+	class Lmdgh_Customize_Textarea_Control extends WP_Customize_Control {
+		
+		public $type = 'textarea';
+
+		public function render_content(){
+		?>	
+		<label for="">
+			<span class="customize-control-title"><?php echo esc_html($this->label ); ?></span>
+			<textarea <?php $this->link() ?> rows="5" style="width: 100%"><?php echo esc_textarea($this->value() ); ?></textarea>
+		</label>	
+		<?php
+		}
+	}//CLASS
+
+	/**
 	 * 'CABEZERA'
 	 */
 	$wp_customize->add_section('lmdgh_header', array(
@@ -22,7 +39,7 @@ function lmdgh_customizer_register($wp_customize){
 		'description'	=>	__('Opciones de la cabezera','lmdgh'),
 		'priority'		=>	35
 	));	
-	//logo
+		//LOGO
 	$wp_customize->add_setting('lmdgh_custom_settings[logo]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -34,7 +51,7 @@ function lmdgh_customizer_register($wp_customize){
 		'settings'		=>	'lmdgh_custom_settings[logo]'
 	)));
 
-	//IMAGEN CABECERA
+		//IMAGEN CABECERA
 	$wp_customize->add_setting('lmdgh_custom_settings[imagen-cabecera]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -55,7 +72,7 @@ function lmdgh_customizer_register($wp_customize){
 		'priority'		=>	36
 	));	
 
-	//TWITTER
+		//TWITTER
 	$wp_customize->add_setting('lmdgh_custom_settings[twitter]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -67,7 +84,7 @@ function lmdgh_customizer_register($wp_customize){
 		'settings'		=>	'lmdgh_custom_settings[twitter]'
 	));
 
-	//FACEBOOK
+		//FACEBOOK
 	$wp_customize->add_setting('lmdgh_custom_settings[facebook]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -79,7 +96,7 @@ function lmdgh_customizer_register($wp_customize){
 		'settings'		=>	'lmdgh_custom_settings[facebook]'
 	));
 
-	//GOOGLE
+		//GOOGLE PLUS
 	$wp_customize->add_setting('lmdgh_custom_settings[google]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -91,7 +108,7 @@ function lmdgh_customizer_register($wp_customize){
 		'settings'		=>	'lmdgh_custom_settings[google]'
 	));
 
-	//INSTRAGRAM
+		//INSTRAGRAM
 	$wp_customize->add_setting('lmdgh_custom_settings[instagram]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
@@ -112,7 +129,7 @@ function lmdgh_customizer_register($wp_customize){
 		'priority'		=>	37
 	));	
 
-	//Texto copyright
+		//Texto copyright
 	$wp_customize->add_setting('lmdgh_custom_settings[copyright_text]', array(
 		'default'		=>	date('Y') . ' &copy; ' . get_bloginfo('name' ) . ' / Diseñado por <a href="http://www.lmdgh.com">Luis Miguel Del Gallego</a>',
 		'type'			=>	'theme_mod'
@@ -126,25 +143,25 @@ function lmdgh_customizer_register($wp_customize){
 
 
 	/**
-	 * Miselaneo
+	 * MISELANEO
 	 */
-	$wp_customize->add_section('lmdgh_miselaneous', array(
-		'title'			=>	__('Miselaneoa','lmdgh'),
-		'description'	=>	__('Opciones miseláneas','lmdgh'),
+	$wp_customize->add_section('lmdgh_miscelaneous', array(
+		'title'			=>	__('Miscelaneos','lmdgh'),
+		'description'	=>	__('Opciones misceláneas','lmdgh'),
 		'priority'		=>	38
 	));
 
-		//Texto copyright
+		//Texto css
 	$wp_customize->add_setting('lmdgh_custom_settings[custom_css]', array(
 		'default'		=>	'',
 		'type'			=>	'theme_mod'
 	));
 
-	$wp_customize->add_control( 'lmdgh_custom_settings[custom_css]', array(
+	$wp_customize->add_control( new Lmdgh_Customize_Textarea_Control( $wp_customize,'lmdgh_custom_settings[custom_css]', array(
 		'label'			=>	__('CSS personalizado','lmdgh'),
-		'section'		=>	'lmdgh_miselaneous',
+		'section'		=>	'lmdgh_miscelaneous',
 		'settings'		=>	'lmdgh_custom_settings[custom_css]'
-	));
+	)));
 }
 
 add_action('customize_register','lmdgh_customizer_register');

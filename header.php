@@ -25,9 +25,17 @@
         <?php wp_head(); ?>
 
         <?php 
-        	$options = get_theme_mod('lmdg_custom_settings');
+        	$options = get_theme_mod('lmdgh_custom_settings');
         	$logo = $options['logo'];
+            $custom_css = $options['custom_css'];
         ?>
+
+        <?php if (!empty($custom_css)) { ?>
+            <style type="text/css" media="screen">
+                <?php echo $custom_css; ?>
+            </style>
+        <?php
+        } ?>
 	
 </head>
 

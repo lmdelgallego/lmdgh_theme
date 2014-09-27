@@ -69,7 +69,7 @@
             add_theme_support( 'post-formats', $formats );	
 
             // Add theme support for Featured Images
-            add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );	
+            add_theme_support( 'post-thumbnails');	
 
             // Add theme support for Custom Background
             $background_args = array(

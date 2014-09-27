@@ -8,8 +8,15 @@
  * Author URI: http://URI_Of_The_Plugin_Author
  * License: GPLv2
  */
+/**
+ * POST TYPE: Proyectos
+ */
+require_once 'includes/proyectos-post-type.php';
 
-require_once 'includes/post-type.php';
+/**
+ * TAXONOMY: Servicios
+ */
+require_once 'includes/servicios-taxonomy.php';
 
 
 ?>

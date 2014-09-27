@@ -39,7 +39,16 @@
 					
 					<h1><?php _e('Blog','lmdgh') ?></h1>	
 						
-				<?php }else{ ?>
+				<?php }elseif ( is_tax()) { ?>
+					
+					<?php $term = get_term_by('slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
+					<h1><?php echo  $term->taxonomy;?>: <?php echo $term->name; ?></h1>
+				
+				<?php }elseif ( is_post_type_archive() ) { ?>
+					
+					<h1><?php post_type_archive_title( ); ?></h1>	
+
+				<?php } else { ?>
 					
 					<h1><?php wp_title(' ',true, 'right'); ?></h1>
 				

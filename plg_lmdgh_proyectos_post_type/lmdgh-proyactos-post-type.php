@@ -18,5 +18,10 @@ require_once 'includes/proyectos-post-type.php';
  */
 require_once 'includes/servicios-taxonomy.php';
 
+/**
+ * METABOXES
+ */
+require_once 'includes/proyectos-metaboxes.php';
+
 
 ?>

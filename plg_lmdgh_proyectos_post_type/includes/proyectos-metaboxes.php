@@ -15,12 +15,14 @@
  * 
  */
 
-function lmdgh_home_metabox_add(){
+
+
+function lmdgh_proyectos_metabox_add(){
     # code...
-    add_meta_box('home_datails', __('Página de inicio', 'lmdgh'), 'lmdgh_home_metabox', 'page', 'normal', 'high', '' );
+    add_meta_box('proyect_datails', __('Detalles del proyecto', 'lmdgh'), 'lmdgh_proyectos_metabox', 'proyectos', 'normal', 'high', '' );
 }
 
-add_action( 'add_meta_boxes', 'lmdgh_home_metabox_add' );
+add_action( 'add_meta_boxes', 'lmdgh_proyectos_metabox_add' );
 
 
 /**
@@ -39,49 +41,55 @@ add_action( 'add_meta_boxes', 'lmdgh_home_metabox_add' );
  * Creamos un listado de los campos. 
  */
 
-$custom_home_meta_fields = array(
+$custom_proyectos_meta_fields = array(
     array(
-        'label' =>  __('Texto destacado','lmdgh'),
-        'desc'  =>  __('Inserta el eslogan para tu sitio','lmdgh'),
-        'id'    => 'slogan',
-        'type'  => 'textarea'
+        'label' =>  __('Cliente','lmdgh'),
+        'desc'  =>  __('Para quien fue este proyecto','lmdgh'),
+        'id'    => 'cliente',
+        'type'  => 'text'
     ),
     array(
-        'label' =>  __('Texto del boton','lmdgh'),
-        'desc'  =>  __('Ingresa un texto para el botón con el llamado a la acción','lmdgh'),
-        'id'    => 'btn_text',
+        'label' =>  __('Fecha','lmdgh'),
+        'desc'  =>  __('¿Cuando se realizo este proyecto?','lmdgh'),
+        'id'    => 'fecha',
+        'type'  => 'text'
+    ),
+    array(
+        'label' =>  __('Webside','lmdgh'),
+        'desc'  =>  __('¿Quieres incluir un enlace?','lmdgh'),
+        'id'    => 'webside',
+        'type'  => 'url'
+    ),
+    array(
+        'label' =>  __('Llamado a la acción','lmdgh'),
+        'desc'  =>  __('Texto para el botón lladado a la accion','lmdgh'),
+        'id'    => 'btn_txt',
         'type'  => 'text'
     ),
     array(
         'label' =>  __('Link del botón','lmdgh'),
-        'desc'  =>  __('¿A donde apuntará el botón?','lmdgh'),
+        'desc'  =>  __('¿A donde llevará el enlace?','lmdgh'),
         'id'    => 'btn_link',
         'type'  => 'url'
     ),
     array(
-        'label' =>  __('Título de proyectos recientes','lmdgh'),
-        'desc'  =>  __('Ingresa un texto para mostrar sobre los proyectos recientes','lmdgh'),
-        'id'    => 'proyectos_title',
-        'type'  => 'text'
-    ),
-    array(
-        'label' =>  __('Proyectos','lmdgh'),
-        'desc'  =>  __('¿Cuántos proyectos quieres mostrar?','lmdgh'),
-        'id'    => 'proyectos_count',
-        'type'  => 'number'
+        'label' =>  __('Multimedia','lmdgh'),
+        'desc'  =>  __('Incluye aquí imágenes, videos, audios o cualquier contenido necesario para mostrar el proyecto.','lmdgh'),
+        'id'    => 'multimedia',
+        'type'  => 'wysiwyg'
     )
 );
 
 
 
-function lmdgh_home_metabox(){
+function lmdgh_proyectos_metabox(){
 
-    global $custom_home_meta_fields, $post;
+    global $custom_proyectos_meta_fields, $post;
 
     //Crear campo nonce
-    wp_nonce_field('lmdgh_home_meta_box_nonce', 'meta_box_nonce' );
+    wp_nonce_field('lmdgh_proyectos_meta_box_nonce', 'meta_box_nonce' );
 
-    foreach ($custom_home_meta_fields as $field) {
+    foreach ($custom_proyectos_meta_fields as $field) {
         
         //Obtener el valor del campo
         $meta = get_post_meta($post->ID, $field['id'], true );
@@ -101,27 +109,6 @@ function lmdgh_home_metabox(){
 <?php
                 break;
             
-            case 'textarea':
-?>
-            <p>
-                <label for="<?php echo $field['id']; ?>"><?php echo $field['label']; ?></label><br/>
-                <textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" rows="3" class="widefat"><?php echo $meta; ?></textarea>
-                <span class='howto'><?php echo $field['desc']; ?></span>
-            </p>
-            <hr style="width: 100%, height: 1px; border: none; border-bottom: 1px solid white; margin: 15px 0; background: #dbdcdd" />
-<?php
-                break;
-
-            case 'number':
-?>
-            <p>
-                <label for="<?php echo $field['id']; ?>"><?php echo $field['label']; ?></label><br/>
-               <input id="<?php echo $field['id']; ?>" name="<?php echo $field['id']; ?>" type="number" class="widefat" value="<?php echo $meta; ?>" />
-                <span class='howto'><?php echo $field['desc']; ?></span>
-            </p>
-<?php
-                break;
-
             case 'url':
 ?>
             <p>
@@ -131,7 +118,17 @@ function lmdgh_home_metabox(){
             </p>
             <hr style="width: 100%, height: 1px; border: none; border-bottom: 1px solid white; margin: 15px 0; background: #dbdcdd" />
 <?php
-                break;    
+                break;
+
+            case 'wysiwyg':
+?>
+            <p>
+                <label for="<?php echo $field['id']; ?>"><?php echo $field['label']; ?></label><br/>
+                <span class='howto'><?php echo $field['desc']; ?></span>
+                <?php wp_editor( $meta, $field['id'] ); ?>
+            </p>
+<?php
+                break;
         }//switch
     }//foreach
 
@@ -153,12 +150,12 @@ function lmdgh_home_metabox(){
  * 
  */
 
-function lmdgh_save_home_custom_meta($post_id){
+function lmdgh_save_proyectos_custom_meta($post_id){
 
-    global $custom_home_meta_fields;
+    global $custom_proyectos_meta_fields;
 
     //Comprobar que el campo nonce haya sido enviado.
-    if (!isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'lmdgh_home_meta_box_nonce' ) ) {
+    if (!isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'lmdgh_proyectos_meta_box_nonce' ) ) {
         return;
     }
 
@@ -177,13 +174,14 @@ function lmdgh_save_home_custom_meta($post_id){
         }
     }
 
-    foreach ($custom_home_meta_fields as $field) {
+    foreach ($custom_proyectos_meta_fields as $field) {
         //Capturamos los datos antiguos.
         $old = get_post_meta($post_id, $field['id'] );
         //Campuramos los datos nuevos
         $new = $_POST[ $field['id'] ];
 
         if ( $new && $new != $old) {
+
             if ($field['tipe'] == 'url') {
                 //actualiza el post meta
                 update_post_meta($post_id,$field['id'],esc_url($new));
@@ -199,57 +197,6 @@ function lmdgh_save_home_custom_meta($post_id){
      } //foreach
 }
 
-add_action('save_post','lmdgh_save_home_custom_meta' );
-
-
-
-/**
- * Oculta o muestra el metabox
- * 
- * Con esta funcion se integra css el head del área admin 
- * que permite ocultar el metabox hom
- *
- * @author Luis Miguel Del Gallego H.
- * @package LmdghTheme
- * @since 1.0.0
- * 
- */
-
-
-function lmdgh_home_metabox_css(){
-?>
-<style type="text/css" media="screen"> 
-    #home_datails{
-        display: none;
-    }
-</style>
-
-<script>
-    jQuery('document').ready(function ($) {
-        
-        slider_box = function () {
-            if ( $('#page_template').attr('value') == 'template-home.php') {
-                $('#home_datails').slideDown();
-            }else{
-                $('#home_datails').hide();   
-            }
-        }
-
-        slider_box();
-
-        $('#page_template').change(function () {
-            slider_box();
-        });
-
-        $('#home_datails-hide').parent().remove();
-
-    });
-</script>
-<?php
-}
-
-
-add_action('admin_head', 'lmdgh_home_metabox_css');
-
+add_action('save_post','lmdgh_save_proyectos_custom_meta' );
 
 ?>

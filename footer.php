@@ -79,5 +79,36 @@ $copyright_text = $option['copyright_text'];
 	</div><!-- /#global-container -->
 
 	<?php wp_footer(); ?>
+
+	<?php if (is_page_template('template-portafolio.php' )) { ?>
+	
+		<script>
+
+		jQuery('document').ready(function ($) {
+
+			$('.portfolio-filter a').click(function(e){	
+				e.preventDefault();
+				var filterLink = $(this).attr('href');
+
+				$(this).
+					parent()
+					.addClass('current-cat')
+					.siblings()
+					.removeClass('current-cat');
+
+				$('.portfolio-filter .loading').animate({opacity: 1},200);	
+				$('#portfolio-list').animate({opacity: 0.3},200);	
+
+				$('#portfolio-list').load(filterLink + ' #portfolio-list', function(){
+					$('.portfolio-filter .loading').animate({opacity: 0},200);	
+					$('#portfolio-list').animate({opacity: 1},200);	
+				});
+
+			});
+		});
+
+		</script>	
+	
+	<?php } ?>
 </body>
 </html>

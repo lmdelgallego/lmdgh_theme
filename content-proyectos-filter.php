@@ -16,7 +16,7 @@
         )); 
         ?>
         <li class="loading">
-            <img src="img/loading.gif" alt="Loading" />
+            <img src="<?php echo IMAGES; ?>/loading.gif" alt="Loading" />
         </li>
     </ul>
 </div><!-- /.portfolio-filter -->

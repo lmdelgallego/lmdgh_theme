@@ -106,8 +106,6 @@
 					
 					
 				<?php
-
-
 					if(get_next_posts_link() || get_previous_posts_link()) {
 				?>	
 					
@@ -126,7 +124,6 @@
 					</div> <!-- /.posts-navigation -->
 				<?php
 					}
-					
 				?>
 					
 			

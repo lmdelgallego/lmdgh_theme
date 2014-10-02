@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"btn",
+				"btn_txt"
+			],
+			[
+				"ser",
+				"servicios"
+			],
+			[
+				"bt",
+				"btn_text"
+			],
+			[
+				"_",
+				"_e"
+			],
+			[
+				"echo",
+				"echo"
+			],
+			[
+				"btn_",
+				"btn_link"
+			],
+			[
+				"esc",
+				"esc_url"
+			],
+			[
+				"get_tag",
+				"get_tag_link"
+			],
+			[
+				"get_ta",
+				"get_tags"
+			],
+			[
+				"get_the_ter",
+				"get_the_terms"
+			],
+			[
+				"get_the_t",
+				"get_the_terms"
+			],
+			[
+				"cli",
+				"cliente"
+			],
+			[
+				"the_co",
+				"the_content"
+			],
+			[
+				"get_f",
+				"get_footer"
+			],
+			[
+				"get_he",
+				"get_header"
+			],
+			[
 				"im",
 				"imagen_cabecera"
 			],
@@ -91,6 +151,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "single-proyectos.php",
+			"settings":
+			{
+				"buffer_size": 7120,
+				"line_ending": "Windows",
+				"name": "single-proyectos.php"
+			}
+		},
+		{
+			"file": "single.php",
+			"settings":
+			{
+				"buffer_size": 4507,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -117,6 +194,10 @@
 	"file_history":
 	[
 		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/index.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/page.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/template-portafolio.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/single.php",
+		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/content-proyectos-filter.php",
 		"/C/Users/aluca_000/Dropbox/PROYECTOS/MERCADEO/wadmin/scripts/objects/class.database.php",
 		"/Y/JUEGO_PRODUCTO_IDEAL/index.html",
 		"/C/Users/aluca_000/Dropbox/PROYECTOS/CURSO_WP_AVANZADO/WP/wp-content/themes/lmdgh_theme/functions.php",
@@ -208,8 +289,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "single-proyectos.php",
+					"settings":
+					{
+						"buffer_size": 7120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5720,
+								5720
+							]
+						],
+						"settings":
+						{
+							"auto_name": "single-proyectos.php",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1973.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "single.php",
+					"settings":
+					{
+						"buffer_size": 4507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3910,
+								3058
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1888.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

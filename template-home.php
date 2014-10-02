@@ -29,6 +29,10 @@
                 $proyectos_title = get_post_meta( $post->ID,'proyectos_title', true);
                 $proyectos_count = get_post_meta( $post->ID,'proyectos_count', true);
 
+                if ($proyectos_count && $proyectos_count < 0) {
+                    $proyectos_count = 0;
+                }
+
                 if (!$slogan) {
                    $slogan = get_bloginfo('name' );
                 }
@@ -38,7 +42,7 @@
                 } 
 
                 if (!$proyectos_title) {
-                   $btn_text = __('Mira mis proyectos recientes','lmdgh');
+                   $proyectos_title = __('Mira mis proyectos recientes','lmdgh');
                 }        
              ?>
 
@@ -89,77 +93,27 @@
                 
             <div id="home-recent-projects" class="portfolio-archive global-padding">
                 
-                <h3>Mira mis últimos proyectos</h3>
+                <h3><?php echo $proyectos_title; ?></h3>
                     
                 <div class="cols">
-                
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/g/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
-                    
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
-                    
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/g/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
-                    
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
-                    
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/g/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
-                    
-                    <article class="portfolio-item-resume col3" data-link="#">
-                        
-                        <div class="text">
-                            <h2><a href="#">Proyecto de ejemplo</a></h2>
-                            <div class="services"><a href="">Diseño web</a></div> 
-                        </div>
-                        
-                        <a href=""><img src="http://placekitten.com/640/480" alt="" /></a>
-                                            
-                    </article>  <!-- /.col3 -->
 
-                
+                <?php 
+
+                        $query_proyectos = new WP_Query(array(
+                            'post_type'     => 'proyectos',
+                            'posts_per_page' => $proyectos_count
+                        ));
+
+                    if ( $query_proyectos->have_posts() ) : while ($query_proyectos->have_posts() ) : $query_proyectos->the_post(); 
+
+                        get_template_part( 'content', 'proyecto-resumen' ); 
+
+                    endwhile; else: 
+                        _e( 'No hay proyectos disponibles.', 'lmdgh' );
+                    endif;
+
+                 ?> 
+
                 </div> <!-- /.cols -->
             
             </div><!-- /#recent-projects -->

@@ -64,8 +64,9 @@
                             <?php 
                             $paged = ( get_query_var('paged' ) ) ? get_query_var('paged' ) : 1;
                             $proyectos = new WP_Query(array(
-                                'post_type' => 'proyectos',
-                                'paged'     => $paged
+                                'post_type'     => 'proyectos',
+                                'paged'         => $paged,
+                                'posts_per_page' => 9
                             ));    
 
                                 if ( $proyectos->have_posts() ) : while ( $proyectos->have_posts() ) : $proyectos->the_post(); 

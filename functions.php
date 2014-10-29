@@ -144,6 +144,13 @@
     
     require_once ('functions/home-metaboxes.php');
 
+    /*
+     * Proyecto Widget
+     * 
+     */
+    
+    require_once ('functions/proyectos-widget.php');
+
 
 ?>
 
